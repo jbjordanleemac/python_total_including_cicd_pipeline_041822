@@ -19,8 +19,8 @@ class TestCalc(unittest.TestCase):
     """
     Test that the addition of two floats return the correct result
     """
-    result = calc.add2(2.3, 4.5)
-    self.assertEqual(result, 6.8)
+    result = calc.add2("2.3", "4.5")
+    self.assertEqual(result, "6.8")
 
   def test_add_strings(self):
     """
@@ -40,7 +40,7 @@ class TestCalc(unittest.TestCase):
     """
     Test add one string and float number together return back as one concatened string in which float being convert to string
     """
-    result = calc.add2("glue", 4.6)
+    result = calc.add2("glue", "4.6")
     self.assertEqual(result, "glue4.6")
 
 if __name__ == '__main__':
