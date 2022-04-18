@@ -1,6 +1,21 @@
 #!/usr/bin/python
 
-import mymodule041822
+import sys, mymodule041822
+import json
+from optparse import OptionParser
+
+#parser = OptionParser()
+#parser.add_option("-f", "--file", action="store", type="string", dest="file", help="<file>")
+#	
+#(options, args) = parser.parse_args()
+#
+#if options.file == None:
+#  print("Please use help for options!!!")
+#  sys.exit(1)
+#else:
+#  p = open("testfile04182201", "ro")
+#  print(p.read())
+   
 
 class longweekend():
   extra_dayoff = "Yes extra day off!!!"
@@ -122,3 +137,47 @@ for i in h:
     g.append(i)
 
 print(g)
+
+# read 
+
+j = open("itemlist041822", "ro")
+print(j.read())
+
+# how to get rid of duplicated items in list
+
+k = [3, 4, 2, 2, 4, 7, 5, 5, 3, 1, 2, 4]
+
+print("Orginal list is :" + str(k))
+
+l=[]
+
+for m in k:
+  if m not in l:
+    l.append(m)
+
+print("After get rid of the duplicated items, list becomes: ")
+print(l)
+
+#format 1
+
+firstname = "John" 
+lastname = "Doe"
+
+print("Your name is {} {}".format(firstname, lastname))
+
+#format 2
+
+print("Your name is %s" %firstname)
+
+
+#json
+# from json string to python dict
+
+n = '{"MON":"ONE", "TUE":"TWO", "WED":"THREE"}'
+o = json.loads(n)
+print("This is your json dict value: " +str(o["MON"]))
+
+# from python dict to json string
+#print(thisdict)
+print("This is your dict json value " + str(json.dumps(thisdict)))
+
